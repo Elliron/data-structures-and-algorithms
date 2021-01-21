@@ -66,19 +66,20 @@ CHALLENGE 4
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 1 and your forEachTwoToThe function from challenge 2, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
-// const mapTwoToThe = (arr) => {
-//   // Solution code here...
+const mapTwoToThe = (arr) => {
+  //   // Solution code here...
 
-//   console.log(arr);
-//   let squares = arr.map(number => Math.pow(2, number));
-//   console.log(squares);
-//   return squares;
-// let squares = arr.map(function (number, idx) {
-//   return number * number;
-// });
-// };
+  //   console.log(arr);
+  let squares = arr.map(number => Math.pow(2, number));
+  // console.log(squares);
+  return squares;
+  // let squares = arr.map(function (number, idx) {
+  //   return number * number;
+  // });
+};
 
-const mapTwoToThe = (arr) => arr.map(number => Math.pow(2, number));
+// const mapTwoToThe = (arr) => arr.map(number => Math.pow(2, number));
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
