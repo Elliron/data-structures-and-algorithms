@@ -206,11 +206,13 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+
   let countedElements = arr.reduce((elementsCounter, element, index, arr) => {
     elementsCounter++;
     return elementsCounter;
   }, 0);
   return countedElements;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
