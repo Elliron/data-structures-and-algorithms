@@ -48,9 +48,12 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
-  // return input[0].filter(element => !target.includes(element));
-  // console.log(target);
-  // console.log(input[0].filter(!target));
+  // console.log(input);
+  const flatInput = input
+    .reduce((arr, innerNumber) => [...arr, ...innerNumber], [])
+    .filter(number => number === target);
+  // console.log(flatInput);
+  return flatInput.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,6 +68,11 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  const flatInput = input
+    .reduce((arr, innerNumber) => [...arr, ...innerNumber], [])
+    .reduce((a, b) => a + b, 0);
+  // console.log('this', flatInput);
+  return flatInput;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,8 +89,41 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-  console.log(input[0]);
+  const firstArray = input.map(value => {
+    const filterArray = value.filter(mappedValue => {
+      if (typeof (mappedValue) === 'number' && mappedValue % 5 === 0) {
+        return mappedValue;
+      }
+    });
+    const raise = filterArray.map(raiseIt => Math.pow(2, raiseIt));
+    return raise;
+  });
+  return firstArray;
 };
+// console.log('input', input);
+//   const map  = input
+//     .map(array => {
+//     const filter = arrayFilter.filter((value) => {
+//         if (typeof (value) === 'number' && value % 5 ===0) {
+//           return value;
+//         }
+//       })
+//       console.log(map)
+//       // return array);
+//     // .filter((value) => {
+//     //   if (typeof (value) === 'number' && value % 5 === 0) {
+//     //     return value;
+//     //   }
+//     //   });
+
+//       // flatInput.map()
+//       // return raised;
+//     // });
+//   console.log('ya', flatInput);
+//   const raised = flatInput.map(raise => Math.pow(2, raise));
+//   console.log('4', raised);
+//   // return flatInput;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stetch Goal
