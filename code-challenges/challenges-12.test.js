@@ -70,12 +70,12 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 const salesData = (hours, data) => {
   // Solution code here...
   // formattedData = [];
-  hours.foreach((hour) {
-  console.log(hour);
-  }
-  // console.log(hours);
-  // console.log(data);
-  // return formattedData;
+  //   hours.foreach((hour) {
+  //   console.log(hour);
+// }
+//   // console.log(hours);
+//   // console.log(data);
+//   // return formattedData;
 };
 
 /* ------------------------------------------------------------------------------------------------
