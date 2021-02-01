@@ -13,10 +13,12 @@ You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
   // Solution code here...
+
   const fullName = people.map(person => `${person.firstName} ${person.lastName}`);
   return fullName;
   // console.log('people', people);
   // people.map()
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,12 +31,16 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 
 const validatePin = (pin) => {
   // Solution code here...
+
   const pinNum = (/^\d{4}$/gm);
   return pinNum.test(pin);
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
+
 
 Write a function named validateWord that uses a regular expression pattern to validate that a word is between 5 and 10 characters long.
 
@@ -65,6 +71,7 @@ const hasNumber = (string) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
+
 Write a function named validateEmail that takes in an email address and validates it based
 on several rules:
   - one word, or two words separated by a period, before the @ symbol
@@ -83,7 +90,10 @@ const validateEmail = (email) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
+
 CHALLENGE 6
+
+
 
 Write a function named validatePhoneNumber that accepts a phone number and determines if it is valid.
 
@@ -108,7 +118,9 @@ const validatePhoneNumber = (phoneNumber) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
+
 CHALLENGE 7 - Stretch Goal
+
 
 Write a function named findTagNames that iterates over an array of HTML strings and uses a regular expression pattern to return the closing tags.
 
@@ -154,6 +166,7 @@ describe('Testing challenge 2', () => {
 });
 
 describe('Testing challenge 3', () => {
+
   test('It should validate a word between 5 and 10 characters', () => {
     expect(validateWord('Hello')).toBeTruthy();
     expect(validateWord('Bob')).toBeFalsy();
@@ -179,6 +192,7 @@ describe('Testing challenge 4', () => {
 });
 
 describe('Testing challenge 5', () => {
+
   test('It should match a basic email', () => {
     expect(validateEmail('joe@codefellows.com')).toBeTruthy();
   });
@@ -208,7 +222,10 @@ describe('Testing challenge 5', () => {
   });
 });
 
+
 describe('Testing challenge 6', () => {
+
+
   test('It should match the acceptable phone number formats', () => {
     expect(validatePhoneNumber('(555) 555-5555')).toBeTruthy();
     expect(validatePhoneNumber('555 555-5555')).toBeTruthy();
@@ -233,6 +250,7 @@ describe('Testing challenge 6', () => {
 });
 
 xdescribe('Testing challenge 7', () => {
+
   test('It should return the closing tags', () => {
     expect(findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'])).toStrictEqual(['/h1', '/p']);
   });
