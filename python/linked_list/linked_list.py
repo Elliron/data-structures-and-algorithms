@@ -1,11 +1,32 @@
-class LinkedList:
+class Node:
     """
-    Put docstring here
+    Class creates an Linked-List
+    The object inside has two parameters, itself as the first parameter and the head as the second parameter
+
+
     """
 
-    def __init__(self):
-        # initialization here
-        pass
+    def _init_(self, value, next = None):
+        self.value = value
+        self.next = next
+
+class LinkedList:
+    """
+    Class creates an empty Linked List
+    Class passes through two parameters
+    The first parameter refers to the Linked List created
+    The second parameter references the head of the list
+Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
+Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
+Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
+Define a method called toString (or __str__ in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
+"{ a } -> { b } -> { c } -> NONE"
+Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
+Be sure to follow your language/frameworks standard naming conventions (e.g. C# uses PascalCasing for all method and class names).
+    """
+
+    def __init__(self, head = None):
+        self.head = head
 
     def some_method(self):
         # method body here
