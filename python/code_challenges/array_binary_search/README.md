@@ -8,6 +8,11 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted array
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
+New Submission
+![updated resubmit](../img/binary-search-challenge-resubmit.jpg)
+
+
+Old Submission
 ![array-binary-search](../img/array-binary-search.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
