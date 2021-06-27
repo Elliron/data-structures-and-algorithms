@@ -17,3 +17,8 @@ This project uses Python to create a Linked List.  The list can have items added
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
+
+## Credits and Collaborators
+- Prabin Singh
+- Garfield Grant
+- Wondwusen
