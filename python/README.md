@@ -79,5 +79,8 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 
 ## Code Challenges
 [Code Challenge 02](code_challenges/challenge-02/README.md)
-
 [Code Challenge 03](code_challenges/array_binary_search/README.md)
+[Code Challenge 05](linked_list/README.md)
+
+
+
