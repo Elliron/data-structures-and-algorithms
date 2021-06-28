@@ -61,6 +61,25 @@ class LinkedList:
             new_node.next = node.next
             node.next = new_node
 
+    def from_end(self, k):
+        list_head = self.head
+        count = 0
+        while list_head != None:
+            list_head = list_head.next
+            count += 1
+        if k > count:
+            return("Out of Range")
+        elif k == count:
+            return("Same Length")
+        elif k < 0:
+            return("negative Number")
+        elif k == self:
+            return("Linked list needs to be greater than 1")
+        list_head = self.head
+        for i in range(1,count - k):
+            list_head = list_head.next
+        return list_head.value
+
     def __str__(self):
         string = ""
         current = self.head

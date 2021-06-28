@@ -52,25 +52,63 @@ def test_seven():
     assert actual == expected
 
 def test_eight():
-    new_list = LinkedList(Node('1',Node('3',Node('2'))))
-    new_list.append_to_end('5')
+    new_list = LinkedList(Node(1,Node(3,Node(2))))
+    new_list.append_to_end(5)
     actual= new_list.__str__()
-    expected = "{'1'} ->{'3'} ->{'2'} ->{'5'} -> None "
+    expected = "{1} ->{3} ->{2} ->{5} -> None "
     assert actual == expected
 
 def test_nine():
-    new_list = LinkedList(Node('1',Node('3',Node('2'))))
-    new_list.insert_before('3','5')
-    actual = "{'1'} ->{'5'} ->{'3'} ->{'2'} -> None "
-    expected = "{'1'} ->{'5'} ->{'3'} ->{'2'} -> None "
+    new_list = LinkedList(Node(1,Node(3,Node(2))))
+    new_list.insert_before(3,5)
+    actual = "{1} ->{5} ->{3} ->{2} -> None "
+    expected = "{1} ->{5} ->{3} ->{2} -> None "
     assert actual == expected
 
 def test_ten():
-    new_list = LinkedList(Node('1',Node('3',Node('2'))))
-    new_list.insert_after('3','5')
+    new_list = LinkedList(Node(1,Node(3,Node(2))))
+    new_list.insert_after(3,5)
     actual = new_list.__str__()
-    expected = "{'1'} ->{'3'} ->{'5'} ->{'2'} -> None "
+    expected = "{1} ->{3} ->{5} ->{2} -> None "
     assert actual == expected
+
+# Kth from end tests
+def test_eleven():
+    new_list = LinkedList(Node(1,Node(3,Node(7,Node(2)))))
+    expected = 2
+    actual = new_list.from_end(0)
+    assert actual == expected
+
+def test_twelve():
+    new_list = LinkedList(Node(1,Node(3,Node(7,Node(2)))))
+    expected = "negative Number"
+    actual = new_list.from_end(-1)
+    assert actual == expected
+
+def test_thirteen():
+    new_list = LinkedList(Node(1,Node(3,Node(7, Node(2)))))
+    expected = "Same Length"
+    actual = new_list.from_end(4)
+    assert actual == expected
+
+def test_fourteen():
+    new_list = LinkedList(Node(1,Node(3,Node(7, Node(2)))))
+    expected = "Out of Range"
+    actual = new_list.from_end(5)
+    assert actual == expected
+
+def test_fifteen():
+    new_list = LinkedList(Node(1))
+    expected = 1
+    actual = new_list.from_end(0)
+    assert actual == expected
+
+def test_sixteen():
+    new_list = LinkedList(Node(1,Node(3,Node(7, Node(2)))))
+    expected = 3
+    actual = new_list.from_end(2)
+    assert actual == expected
+
 
 
 def test_import():
