@@ -43,12 +43,35 @@ def test_six():
     actual = ll1.includes("tomato")
     expected = False
     assert actual == expected
+
 def test_seven():
     ll1 = LinkedList()
     ll1.insert("apple").insert("banana").insert("orange").insert("pear")
     actual = str(ll1)
     expected = "{'pear'} ->{'orange'} ->{'banana'} ->{'apple'} -> None "
     assert actual == expected
+
+def test_eight():
+    new_list = LinkedList(Node('1',Node('3',Node('2'))))
+    new_list.append_to_end('5')
+    actual= new_list.__str__()
+    expected = "{'1'} ->{'3'} ->{'2'} ->{'5'} -> None "
+    assert actual == expected
+
+def test_nine():
+    new_list = LinkedList(Node('1',Node('3',Node('2'))))
+    new_list.insert_before('3','5')
+    actual = "{'1'} ->{'5'} ->{'3'} ->{'2'} -> None "
+    expected = "{'1'} ->{'5'} ->{'3'} ->{'2'} -> None "
+    assert actual == expected
+
+def test_ten():
+    new_list = LinkedList(Node('1',Node('3',Node('2'))))
+    new_list.insert_after('3','5')
+    actual = new_list.__str__()
+    expected = "{'1'} ->{'3'} ->{'5'} ->{'2'} -> None "
+    assert actual == expected
+
 
 def test_import():
     assert LinkedList
