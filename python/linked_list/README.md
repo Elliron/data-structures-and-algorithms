@@ -14,6 +14,8 @@ This project uses Python to create a Linked List.  The list can have items added
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
+## White Board
+![whiteboard](../code_challenges/img/ll-insertions.jpg)
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->

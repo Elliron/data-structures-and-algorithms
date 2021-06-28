@@ -24,6 +24,43 @@ class LinkedList:
             current = current.next
         return False
 
+    def append_to_end(self, value):
+        node = Node(value)
+        if self.head is None:
+            self.head = node
+        else:
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            current.next = node
+
+    def insert_before(self, target, value):
+        node = self.head
+        while node.next is not None:
+            if target == node.next.value:
+                break
+            node = node.next
+        if node == None:
+            print("No Value")
+        else:
+            new_node = Node(value)
+            new_node = node.next
+            node.next = new_node
+
+    def insert_after(self, target, value):
+        node = self.head
+        while node.next is not None:
+            if target == node.value:
+                break
+
+            node = node.next
+        if node == None:
+            print("No Value")
+        else:
+            new_node = Node(value)
+            new_node.next = node.next
+            node.next = new_node
+
     def __str__(self):
         string = ""
         current = self.head
