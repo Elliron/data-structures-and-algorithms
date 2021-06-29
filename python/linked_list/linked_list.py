@@ -80,6 +80,20 @@ class LinkedList:
             list_head = list_head.next
         return list_head.value
 
+    def zip_list(self, second):
+        first_current = self.head
+        second_current = second.head
+        while first_current is not None and second_current is not None:
+            first_current_next = first_current.next
+            second_next = second_current.next
+            second_current.next = first_current_next
+            first_current.next = second_current
+            first_current = first_current_next
+            second_current = second_next
+        second.head = second_current
+
+
+
     def __str__(self):
         string = ""
         current = self.head

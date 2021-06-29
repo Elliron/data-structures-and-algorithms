@@ -20,6 +20,7 @@ This project uses Python to create a Linked List.  The list can have items added
 
 ![Kth-to-end](../code_challenges/img/ll-kth-to-end.png)
 
+![zip-list](../code_challenges/img/zip-link-lists.jpeg)
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -28,3 +29,7 @@ This project uses Python to create a Linked List.  The list can have items added
 - Prabin Singh
 - Garfield Grant
 - Wondwusen
+- Matt Santorsola
+- Ben Hill (TA)
+- Anthony Beaver (TA)
+- https://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/
