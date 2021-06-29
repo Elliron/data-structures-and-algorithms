@@ -1,4 +1,5 @@
 from linked_list.linked_list import LinkedList, Node
+from linked_list.linked_list_zip import zip_list
 import pytest
 
 def test_one():
@@ -109,6 +110,20 @@ def test_sixteen():
     actual = new_list.from_end(2)
     assert actual == expected
 
+# challenge 08
+def test_seventeen():
+    new_list_one = LinkedList(Node(1,Node(3, Node(5))))
+    new_list_two = LinkedList(Node(2,Node(4, Node(6))))
+    actual = zip_list(new_list_one, new_list_two)
+    expected = '{1} ->{2} ->{3} ->{4} ->{5} ->{6} -> None '
+    assert str(actual) == expected
+
+def test_eighteen():
+    new_list_one = LinkedList(Node(1,Node(3, Node(5))))
+    new_list_two = LinkedList(Node(2,Node(4, Node(6))))
+    actual = zip_list(new_list_one, new_list_two)
+    expected = '{1} ->{2} ->{3} ->{4} {7} ->{5} ->{6} -> None '
+    assert str(actual) != expected
 
 
 def test_import():
