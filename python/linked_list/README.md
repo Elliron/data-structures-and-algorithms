@@ -30,4 +30,6 @@ This project uses Python to create a Linked List.  The list can have items added
 - Garfield Grant
 - Wondwusen
 - Matt Santorsola
+- Ben Hill (TA)
+- Anthony Beaver (TA)
 - https://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/
