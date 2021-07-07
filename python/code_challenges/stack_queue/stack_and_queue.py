@@ -1,11 +1,11 @@
 class Node:
-    def __init__(self, value, next = None):
+    def __init__(self, value):
         self.value = value
-        self.next = next
+        self.next = None
 
 class Stack:
-    def __init__(self, node = None):
-        self.top = node
+    def __init__(self, top = None):
+        self.top = top
 
     def is_emptyy(self):
         if self.top is None:
@@ -13,8 +13,8 @@ class Stack:
 
     def push(self, value):
         node = Node(value)
-        node.next = self.top.next
-        self.top.next = node
+        node.next = self.top
+        self.top = node
 
     def pop(self):
         self.is_emptyy()
@@ -23,12 +23,13 @@ class Stack:
         return popped
 
     def peek(self):
-        self.is_emptyy()
-        return self.top.next.value
+        # if self.is_emptyy():
+        #     pass
+        return self.top.value
 
     def __str__(self):
         string = ""
-        current = self.top.next
+        current = self.top
         while current is not None:
             string += f"{ {current.value} } ->"
             current = current.next
@@ -36,12 +37,13 @@ class Stack:
         return string
 
 class Queue:
-    def __init__(self, node = None):
-        self.front = self.back = node
+    def __init__(self, front = None, back = None):
+        self.front = front
+        self.back = back
 
     def __str__(self):
         string = ""
-        current = self.front.next
+        current = self.front
         while current is not None:
             string += f"{ {current.value} } ->"
             current = current.next
@@ -50,19 +52,22 @@ class Queue:
 
     def enqueue(self, value):
         temp = Node(value)
-
-        if self.back == None:
-            self.front = self.back = temp
-            return
-        self.back.next = temp
-        self.back = temp
+        if self.is_empty():
+        # if self.back == None:
+            self.front = temp
+            self.back = temp
+        else:
+            self.back.next = temp
+            self.back = temp
 
     def dequeue(self):
-        self.is_empty()
+        if self.is_empty():
+            raise Exception("queue is empty")
         temps = self.front
-        self.front = temps.next
-        if(self.front == None):
-            self.back = None
+        self.front = temps.front.next
+        return temps.value
+        # elif(self.front == None):
+        #     self.back = None
 
     def peek(self):
         self.is_empty()
@@ -70,7 +75,9 @@ class Queue:
 
     def is_empty(self):
         if self.front is None:
-            raise Exception("empty queue")
+            return True
+        else:
+            return False
 
 if __name__ =='__main__':
 
