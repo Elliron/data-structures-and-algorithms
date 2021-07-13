@@ -1,30 +1,38 @@
+
 class Node:
-    def __init__(self, value):
+    def __init__(self, value, next= None):
         self.value = value
-        self.next = None
+        self.next = next
 
 class Stack:
-    def __init__(self, top = None):
-        self.top = top
+    def __init__(self):
+        self.top = None
+        self.size = 0
 
-    def is_emptyy(self):
-        if self.top is None:
-            raise Exception("empty stack")
+    def __len__(self):
+        return self.size
+
+    def is_empty(self):
+        if self.size == 0:
+            return self.size == 0
+        else:
+            return self.size
 
     def push(self, value):
-        node = Node(value)
-        node.next = self.top
-        self.top = node
+        self.top = Node(value, self.top)
+        self.size += 1
 
     def pop(self):
-        self.is_emptyy()
-        popped = self.top.value
+        if self.is_empty():
+            raise Exception('Empty Stack')
+        result = self.top.value
         self.top = self.top.next
-        return popped
+        self.size -= 1
+        return result
 
     def peek(self):
-        # if self.is_emptyy():
-        #     pass
+        if self.is_empty():
+            raise Exception('empty stack')
         return self.top.value
 
     def __str__(self):
