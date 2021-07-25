@@ -1,48 +1,61 @@
 
 class Node:
-    def __init__(self, value, next= None):
+    def __init__(self, value):
         self.value = value
-        self.next = next
+        self.next = None
 
 class Stack:
     def __init__(self):
         self.top = None
-        self.size = 0
-
-    def __len__(self):
-        return self.size
 
     def is_empty(self):
-        if self.size == 0:
-            return self.size == 0
+        if self.top == None:
+            return True
         else:
-            return self.size
+            return False
 
     def push(self, value):
-        self.top = Node(value, self.top)
-        self.size += 1
+        if self.top == None:
+            self.top = Node(value)
+        else:
+            newnode = Node(value)
+            newnode.next = self.top
+            self.top = newnode
 
     def pop(self):
         if self.is_empty():
             raise Exception('Empty Stack')
-        result = self.top.value
-        self.top = self.top.next
-        self.size -= 1
-        return result
+        else:
+            poppednode = self.top
+            self.top = self.top.next
+            poppednode.next = None
+            return poppednode.value
 
     def peek(self):
         if self.is_empty():
             raise Exception('empty stack')
-        return self.top.value
+        else:
+            return self.top.data
 
-    def __str__(self):
-        string = ""
-        current = self.top
-        while current is not None:
-            string += f"{ {current.value} } ->"
-            current = current.next
-        string += f" None "
-        return string
+    # def __str__(self):
+        # string = ""
+        # current = self.top
+        # while current is not None:
+        #     string += f"{ {current.value} } ->"
+        #     current = current.next
+        # string += f" None "
+        # return string
+
+    def display(self):
+        iternode = self.top
+        if self.isempty():
+            print("Stack Underflow")
+        else:
+            while (iternode != None):
+
+                print(iternode.value, "->",end = " ")
+                iternode = iternode.next
+            return
 
 class Queue:
     def __init__(self, front = None, back = None):
@@ -94,8 +107,9 @@ if __name__ =='__main__':
     stk.push("pear")
     stk.push("kiwi")
     stk.push("watermelon")
-    entire_list = str(stk)
-    print(entire_list)
+    # stk.display()
+    # entire_list = str(stk)
+    # print(entire_list)
 
     queue = Queue()
     queue.enqueue("huh")
