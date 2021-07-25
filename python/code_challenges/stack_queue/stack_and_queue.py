@@ -1,3 +1,5 @@
+class CustomError(Exception):
+    pass
 
 class Node:
     def __init__(self, value):
@@ -24,7 +26,7 @@ class Stack:
 
     def pop(self):
         if self.is_empty():
-            raise Exception('Empty Stack')
+            raise CustomError("Empty Stack")
         else:
             poppednode = self.top
             self.top = self.top.next
@@ -33,38 +35,27 @@ class Stack:
 
     def peek(self):
         if self.is_empty():
-            raise Exception('empty stack')
+            raise CustomError("Empty Stack")
         else:
-            return self.top.data
-
-    # def __str__(self):
-        # string = ""
-        # current = self.top
-        # while current is not None:
-        #     string += f"{ {current.value} } ->"
-        #     current = current.next
-        # string += f" None "
-        # return string
-
-    def display(self):
-        iternode = self.top
-        if self.isempty():
-            print("Stack Underflow")
-        else:
-            while (iternode != None):
-
-                print(iternode.value, "->",end = " ")
-                iternode = iternode.next
-            return
-
-class Queue:
-    def __init__(self, front = None, back = None):
-        self.front = front
-        self.back = back
+            return self.top.value
 
     def __str__(self):
         string = ""
-        current = self.front
+        current = self.top
+        while current is not None:
+            string += f"{ {current.value} } ->"
+            current = current.next
+        string += f" None "
+        return string
+
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.back = None
+
+    def __str__(self):
+        string = ""
+        current = self.back
         while current is not None:
             string += f"{ {current.value} } ->"
             current = current.next
@@ -73,8 +64,7 @@ class Queue:
 
     def enqueue(self, value):
         temp = Node(value)
-        if self.is_empty():
-        # if self.back == None:
+        if self.back == None:
             self.front = temp
             self.back = temp
         else:
@@ -83,16 +73,21 @@ class Queue:
 
     def dequeue(self):
         if self.is_empty():
-            raise Exception("queue is empty")
-        temps = self.front
-        self.front = temps.front.next
-        return temps.value
-        # elif(self.front == None):
+            raise CustomError("Empty Queue")
+        temp = self.front
+        self.front = temp.next
+        if temp is None:
+            self.back = None
+        return temp.value
+
+        # if self.front == None:
         #     self.back = None
 
     def peek(self):
-        self.is_empty()
-        return self.front.next.value
+        if self.is_empty():
+            raise CustomError("Empty Stack")
+        else:
+            return self.front.value
 
     def is_empty(self):
         if self.front is None:

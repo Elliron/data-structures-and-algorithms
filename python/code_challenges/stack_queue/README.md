@@ -11,6 +11,7 @@ Glenn Clark
 
 ## Credits
 - https://www.geeksforgeeks.org/stack-in-python/
+- https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/
 - https://www.geeksforgeeks.org/queue-linked-list-implementation/
 
 ## Challenge
