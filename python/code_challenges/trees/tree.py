@@ -1,12 +1,8 @@
 class Node:
     """
-<<<<<<< HEAD
     Node for Binary Tree
     Node has a value and 2 nexts/children a left and a right
 
-=======
-    Docstring
->>>>>>> c88b6a4c1f0f8b0d633e797f86f40eb179cd2e12
     """
     def __init__(self, value):
         self.left = None
@@ -15,7 +11,6 @@ class Node:
 
 class BinaryTree:
     """
-<<<<<<< HEAD
     First node is the root
     preorder creates a tree copy
     in order gives nodes in non decreasing order
@@ -47,45 +42,6 @@ class BinaryTree:
             self.in_order(self.root.left)
             self.in_order(self.root.right)
             print(self.root.value)
-=======
-    Docstring
-    """
-    def __init__(self):
-        self.root = None
-
-    def pre_order(self):
-        # root >> left >> right
-        res = []
-        if self.root:
-            res.append(self.root.value)
-            res = res + self.pre_order(self.root.left)
-            res = res + self.pre_order(self.root.right)
-
-    def in_order(self):
-        # left >> root >> right
-        res = []
-        if self.root:
-            res = self.in_order(self.root.left)
-            res.append(self.root.value)
-            res = res + self.in_order(self.root.right)
-        return res
-
-    def post_order(self):
-        # left >> right >> root
-        res = []
-        if self.root:
-            res = self.post_order(self.root.left)
-            res = res + self.post_order(self.root.right)
-            res.append(self.root.value)
-
-    def print_tree(self):
-        if self.left:
-            self.left.print_tree()
-            print(self.value),
-        if self.right:
-            self.right.print_tree()
-
->>>>>>> c88b6a4c1f0f8b0d633e797f86f40eb179cd2e12
 
 
 
@@ -93,7 +49,6 @@ class BinarySearchTree(BinaryTree):
     """
     Docstring
     """
-<<<<<<< HEAD
     def __init__(self, root = None):
         self.root = root
 
@@ -131,25 +86,4 @@ if __name__ == '__main__':
     tree.root.right.right = Node(28)
 
     tree.pre_order()
-=======
-
-    def add(self, value):
-        if self.value:
-            if value < self.value:
-                if self.left is None:
-                    self.left = Node(value)
-                else:
-                    self.left.add(value)
-            elif value > self.value:
-                if self.right is None:
-                    self.right = Node(value)
-                else:
-                    self.right.add(value)
-        else:
-            self.value = value
-
-    def contains():
-        pass
-
->>>>>>> c88b6a4c1f0f8b0d633e797f86f40eb179cd2e12
 
